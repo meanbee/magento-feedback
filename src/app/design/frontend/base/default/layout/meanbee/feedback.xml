@@ -2,7 +2,7 @@
 <layout version="0.1.0">
     <meanbee_feedback>
         <reference name="content">
-            <block type="meanbee_feedback/form" name="feedback_form" template="meanbee/feedback/form.phtml"/>
+            <block type="meanbee_feedback/form" name="feedback_form" template="meanbee/feedback/form.phtml" />
         </reference>
     </meanbee_feedback>
 

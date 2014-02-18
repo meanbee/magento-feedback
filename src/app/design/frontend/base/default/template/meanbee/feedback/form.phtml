@@ -1,41 +1,55 @@
 <?php /** @var Meanbee_Feedback_Block_Form $this */ ?>
-<div class="meanbee-feedback-form">
-    <h3><?php echo $this->__('Please take a moment to leave some feedback') ?></h3>
-    <form id="feedback-form" action="<?php echo $this->getFormAction() ?>" method="post">
-        <fieldset>
-            <input type="hidden" name="order" value="<?php echo $this->getOrderNumber() ?>" />
-            <h4><?php echo $this->__('How would you rate your experience using the store?') ?> <em class="required">*</em></h4>
-            <ul class="feedback-ratings">
-                <?php for ($i = 1; $i <= 10; $i++): ?>
-                    <li class="feedback-rating">
-                        <label for="feedback-rating-<?php echo $i ?>"><?php echo $i ?></label>
-                        <input type="radio" id="feedback-rating-<?php echo $i ?>" class="radio" name="rating" value="<?php echo $i ?>" />
-                    </li>
-                <?php endfor; ?>
-                <input type="hidden" class="validate-rating" name="validate_rating" value="" />
-            </ul>
-            <h4><?php echo $this->__('Additional comments') ?></h4>
-            <textarea id="feedback-comments" name="comments"></textarea>
-        </fieldset>
-        <div class="buttons-set">
-            <button type="submit" class="button" title="<?php echo $this->__('Submit Feedback') ?>"><span><span><?php echo $this->__('Submit Feedback') ?></span></span></button>
-        </div>
-    </form>
-    <script type="text/javascript">
-        var feedbackForm = new VarienForm('feedback-form');
-        Validation.add('validate-rating', '<?php echo $this->__('Please select a feedback rating') ?>', function (value) {
-            var radios = $$('#feedback-form .feedback-ratings input');
-
-            if (radios.length > 0) {
-                for (var i = 0; i < radios.length; i++) {
-                    if (radios[i].checked == true) {
-                        return true;
-                    }
+<?php if (Mage::helper('meanbee_feedback/config')->isEnabled()): ?>
+    <div class="meanbee-feedback-form">
+        <h3><?php echo $this->__('Please take a moment to leave some feedback') ?></h3>
+        <form id="feedback-form" action="<?php echo $this->getFormAction() ?>" method="post">
+            <fieldset>
+                <input type="hidden" name="order" value="<?php echo $this->getOrderNumber() ?>" />
+                <h4><?php echo $this->__('How would you rate your experience using the store?') ?> <em class="required">*</em></h4>
+                <ul class="feedback-ratings">
+                    <?php for ($i = 0; $i <= 10; $i++): ?>
+                        <li class="feedback-rating">
+                            <label for="feedback-rating-<?php echo $i ?>"><?php echo $i ?></label>
+                            <input type="radio" id="feedback-rating-<?php echo $i ?>" class="radio" name="rating" value="<?php echo $i ?>" />
+                        </li>
+                    <?php endfor; ?>
+                    <input type="hidden" class="validate-rating" name="validate_rating" value="" />
+                </ul>
+                <h4><?php echo $this->__('Additional comments') ?></h4>
+                <textarea id="feedback-comments" name="comments"></textarea>
+            </fieldset>
+            <div class="buttons-set">
+                <button type="button" class="button" title="<?php echo $this->__('Submit Feedback') ?>" onclick="feedbackForm.submit(this)"><span><span><?php echo $this->__('Submit Feedback') ?></span></span></button>
+            </div>
+        </form>
+        <script type="text/javascript">
+            var feedbackForm = new VarienForm('feedback-form');
+            feedbackForm.submit = function (button) {
+                var form = this.form;
+                if (this.validator.validate()) {
+                    new Ajax.Updater(form, form.action, {
+                        method: 'post',
+                        asynchronous: true,
+                        parameters: Form.serialize(form)
+                    });
                 }
                 return false;
-            }
+            }.bind(feedbackForm);
 
-            return true;
-        });
-    </script>
-</div>
+            Validation.add('validate-rating', '<?php echo $this->__('Please select a feedback rating') ?>', function (value) {
+                var radios = $$('#feedback-form .feedback-ratings input');
+
+                if (radios.length > 0) {
+                    for (var i = 0; i < radios.length; i++) {
+                        if (radios[i].checked == true) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+
+                return true;
+            });
+        </script>
+    </div>
+<?php endif; ?>

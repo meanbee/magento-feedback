@@ -11,6 +11,20 @@
                 <class>Meanbee_Feedback_Block</class>
             </meanbee_feedback>
         </blocks>
+        <helpers>
+            <meanbee_feedback>
+                <class>Meanbee_Feedback_Helper</class>
+            </meanbee_feedback>
+        </helpers>
+        <template>
+            <email>
+                <meanbee_feedback_email_template translate="label">
+                    <label>Customer Feedback Template</label>
+                    <file>meanbee/customer_feedback.html</file>
+                    <type>html</type>
+                </meanbee_feedback_email_template>
+            </email>
+        </template>
     </global>
     <frontend>
         <layout>
@@ -30,4 +44,11 @@
             </meanbee_feedback>
         </routers>
     </frontend>
+    <default>
+        <meanbee_feedback>
+            <general>
+                <enabled>0</enabled>
+            </general>
+        </meanbee_feedback>
+    </default>
 </config>
