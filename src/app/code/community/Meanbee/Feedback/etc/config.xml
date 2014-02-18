@@ -5,4 +5,29 @@
             <version>1.0.0</version>
         </Meanbee_Feedback>
     </modules>
+    <global>
+        <blocks>
+            <meanbee_feedback>
+                <class>Meanbee_Feedback_Block</class>
+            </meanbee_feedback>
+        </blocks>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <meanbee_feedback>
+                    <file>meanbee/feedback.xml</file>
+                </meanbee_feedback>
+            </updates>
+        </layout>
+        <routers>
+            <meanbee_feedback>
+                <use>standard</use>
+                <args>
+                    <module>Meanbee_Feedback</module>
+                    <frontName>meanbee_feedback</frontName>
+                </args>
+            </meanbee_feedback>
+        </routers>
+    </frontend>
 </config>

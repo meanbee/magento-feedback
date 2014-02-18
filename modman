@@ -1,3 +1,7 @@
 # Meanbee_Feedback
 src/app/code/community/Meanbee/Feedback app/code/community/Meanbee/Feedback
+
+src/app/design/frontend/base/default/layout/meanbee/feedback.xml app/design/frontend/base/default/layout/meanbee/feedback.xml
+src/app/design/frontend/base/default/template/meanbee/feedback app/design/frontend/base/default/template/meanbee/feedback
+
 src/app/etc/modules/Meanbee_Feedback.xml app/etc/modules/Meanbee_Feedback.xml
