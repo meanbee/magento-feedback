@@ -31,30 +31,32 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
                         </tr>
                         <tr>
                             <td>
-                                <table cellspacing="0" cellpadding="0" border="0" width="650" style="border:1px solid #EAEAEA;">
+                                <table cellspacing="0" cellpadding="0" border="0" width="650">
                                     <tbody>
                                         <tr>
-                                            <td valign="top" bgcolor="#EAEAEA">Customer Name</td>
-                                            <td valign="top">{{var feedback.getCustomerName()}}</td>
+                                            <td valign="top" bgcolor="#EAEAEA" width="200" style="padding:5px 7px; font-weight:bold; border-top:1px solid #EAEAEA; border-bottom:1px solid #FFFFFF;">Customer Name</td>
+                                            <td valign="top" style="padding:5px 7px; border:1px solid #EAEAEA;">{{var feedback.getCustomerName()}}</td>
                                         </tr>
                                         <tr>
-                                            <td valign="top" bgcolor="#EAEAEA">Order Number</td>
-                                            <td valign="top">{{var feedback.getOrderNumber()}}</td>
+                                            <td valign="top" bgcolor="#EAEAEA" width="200" style="padding:5px 7px; font-weight:bold; border-bottom:1px solid #FFFFFF;">Order Number</td>
+                                            <td valign="top" style="padding:5px 7px; border:1px solid #EAEAEA; border-top:none;">{{var feedback.getOrderNumber()}}</td>
                                         </tr>
                                         <tr>
-                                            <td valign="top" bgcolor="#EAEAEA">Order Total</td>
-                                            <td valign="top">{{var feedback.getOrderTotal()}}</td>
+                                            <td valign="top" bgcolor="#EAEAEA" width="200" style="padding:5px 7px; font-weight:bold; border-bottom:1px solid #FFFFFF;">Order Total</td>
+                                            <td valign="top" style="padding:5px 7px; border:1px solid #EAEAEA; border-top:none;">{{var feedback.getOrderTotal()}}</td>
                                         </tr>
                                         <tr>
-                                            <td valign="top" bgcolor="#EAEAEA">Rating</td>
-                                            <td valign="top">{{var feedback.getRating()}}</td>
+                                            <td valign="top" bgcolor="#EAEAEA" width="200" style="padding:5px 7px; font-weight:bold; border-bottom:1px solid #EAEAEA;">Rating</td>
+                                            <td valign="top" style="padding:5px 7px; border:1px solid #EAEAEA; border-top:none;">{{var feedback.getRating()}}</td>
                                         </tr>
-                                        <tr>
-                                            <td valign="top" colspan="2" bgcolor="#EAEAEA" style="text-align:center;">Comments</td>
-                                        </tr>
-                                        <tr>
-                                            <td valign="top">{{var feedback.comments}}</td>
-                                        </tr>
+                                        {{if feedback.getComments()}}
+                                            <tr>
+                                                <td valign="top" colspan="2" bgcolor="#EAEAEA" style="padding:5px 7px; font-weight:bold; text-align:center; border:1px solid #FFFFFF; border-width:1px 0px;">Comments</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" colspan="2" style="padding:5px 7px; border:1px solid #EAEAEA;">{{var feedback.getComments()}}</td>
+                                            </tr>
+                                        {{/if}}
                                     </tbody>
                                 </table>
                             </td>
