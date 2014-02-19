@@ -6,4 +6,6 @@ src/app/design/frontend/base/default/template/meanbee/feedback app/design/fronte
 
 src/app/locale/en_US/template/email/meanbee/* app/locale/en_US/template/email/meanbee/
 
+src/skin/frontend/base/default/css/meanbee/feedback.css skin/frontend/base/default/css/meanbee/feedback.css
+
 src/app/etc/modules/Meanbee_Feedback.xml app/etc/modules/Meanbee_Feedback.xml

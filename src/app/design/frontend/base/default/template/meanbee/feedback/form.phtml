@@ -7,12 +7,14 @@
                 <input type="hidden" name="order" value="<?php echo $this->getOrderNumber() ?>" />
                 <h4><?php echo $this->__('How would you rate your experience using the store?') ?> <em class="required">*</em></h4>
                 <ul class="feedback-ratings">
+                    <li><span><?php echo $this->__('Poor') ?></span></li>
                     <?php for ($i = 0; $i <= 10; $i++): ?>
                         <li class="feedback-rating">
                             <label for="feedback-rating-<?php echo $i ?>"><?php echo $i ?></label>
                             <input type="radio" id="feedback-rating-<?php echo $i ?>" class="radio" name="rating" value="<?php echo $i ?>" />
                         </li>
                     <?php endfor; ?>
+                    <li><span><?php echo $this->__('Excellent') ?></span></li>
                     <input type="hidden" class="validate-rating" name="validate_rating" value="" />
                 </ul>
                 <h4><?php echo $this->__('Additional comments') ?></h4>

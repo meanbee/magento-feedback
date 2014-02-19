@@ -1,0 +1,28 @@
+.meanbee-feedback-form h4 {
+    margin-top: 10px;
+}
+
+.meanbee-feedback-form .required {
+    color: red;
+}
+
+.meanbee-feedback-form .feedback-ratings {
+    padding: 5px 0 10px 0;
+}
+
+.meanbee-feedback-form .feedback-ratings li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.meanbee-feedback-form .feedback-rating label,
+.meanbee-feedback-form .feedback-rating input {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.meanbee-feedback-form textarea {
+    width: 80%;
+    height: 200px;
+}
