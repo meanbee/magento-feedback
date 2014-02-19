@@ -51,4 +51,11 @@
             </general>
         </meanbee_feedback>
     </default>
+    <phpunit>
+        <suite>
+            <modules>
+                <Meanbee_Feedback />
+            </modules>
+        </suite>
+    </phpunit>
 </config>
