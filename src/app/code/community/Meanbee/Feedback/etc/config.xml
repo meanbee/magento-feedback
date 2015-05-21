@@ -44,7 +44,7 @@
             </meanbee_feedback>
         </routers>
         <secure_url>
-            <meanbee_feedback>/worldpay/processing</meanbee_feedback>
+            <meanbee_feedback>/meanbee_feedback/feedback/submit</meanbee_feedback>
         </secure_url>
     </frontend>
     <default>
